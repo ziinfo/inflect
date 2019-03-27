@@ -1,14 +1,9 @@
 # frozen_string_literal: true
 
 describe Dashboard do
-  before(:each) do
-    @dashboard = Dashboard.create(name: "Dashboard")
-    3.times do |index|
-      Widget.create(name: "Widget #{index}", dashboard: @dashboard)
+  context "#widgets" do
+    it "should rise LoadError" do
+      expect { Dashboard.new.widgets }.to raise_error(LoadError)
     end
-  end
-
-  it "should rise LoadError" do
-    expect { @dashboard.widgets }.to raise_error(LoadError)
   end
 end
