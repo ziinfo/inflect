@@ -1,0 +1,12 @@
+<ul>
+  <% @dashboards.each do |dashboard| %>
+    <li>
+      <%= dashboard.name %>
+      <ul>
+        <% dashboard.widgets.each do |widget| %>
+          <li><%= widget.name %></li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>
